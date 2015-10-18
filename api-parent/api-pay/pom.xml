@@ -9,4 +9,5 @@
   </parent>
   <artifactId>api-pay</artifactId>
   <name>api-pay</name>
+  <packaging>jar</packaging>
 </project>

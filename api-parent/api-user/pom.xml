@@ -9,4 +9,5 @@
   </parent>
   <artifactId>api-user</artifactId>
   <name>api-user</name>
+  <packaging>jar</packaging>
 </project>

@@ -1,8 +1,4 @@
-/*==============================================================*/
-/* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2015/10/14 23:19:32                          */
-/*==============================================================*/
-
+DROP TABLE IF EXISTS T_BOOKING;
 
 DROP TABLE IF EXISTS T_DRIVER;
 
@@ -11,11 +7,27 @@ DROP TABLE IF EXISTS T_ORDER;
 DROP TABLE IF EXISTS T_USER;
 
 /*==============================================================*/
+/* Table: T_BOOKING                                             */
+/*==============================================================*/
+CREATE TABLE T_BOOKING
+(
+   BOOKING_ID           INT NOT NULL AUTO_INCREMENT,
+   ORDER_ID             INT NOT NULL,
+   BOOKING_NO           VARCHAR(128) NOT NULL,
+   TIME                 DATETIME NOT NULL,
+   STARTING_POINT       VARCHAR(128) NOT NULL,
+   DESTINATION          VARCHAR(128) NOT NULL,
+   CRT_TIME             DATETIME,
+   UPD_TIME             DATETIME,
+   PRIMARY KEY (BOOKING_ID)
+);
+
+/*==============================================================*/
 /* Table: T_DRIVER                                              */
 /*==============================================================*/
 CREATE TABLE T_DRIVER
 (
-   DRIVER_ID            INT NOT NULL,
+   DRIVER_ID            INT NOT NULL AUTO_INCREMENT,
    DRIVER_CODE          VARCHAR(128) NOT NULL,
    DRIVER_NAME          VARCHAR(128),
    DRIVING_NO           VARCHAR(64) NOT NULL,
@@ -30,12 +42,15 @@ CREATE TABLE T_DRIVER
 /*==============================================================*/
 CREATE TABLE T_ORDER
 (
-   ORDER_ID             INT NOT NULL,
+   ORDER_ID             INT NOT NULL AUTO_INCREMENT,
    ORDER_NO             VARCHAR(128) NOT NULL,
    DRIVER_ID            INT,
    BUY_ID               INT NOT NULL,
-   AMOUNT               VARCHAR(32),
-   ORDER_STATE          CHAR(4),
+   BOOKING_ID           INT NOT NULL,
+   AMOUNT               VARCHAR(12),
+   ORDER_STATE          CHAR(1),
+   PAY_STATE            CHAR(1),
+   DATA_STATE           CHAR(1),
    CRT_TIME             DATETIME,
    UPD_TIME             DATETIME,
    PRIMARY KEY (ORDER_ID)
@@ -46,7 +61,7 @@ CREATE TABLE T_ORDER
 /*==============================================================*/
 CREATE TABLE T_USER
 (
-   USER_ID              INT NOT NULL,
+   USER_ID              INT NOT NULL AUTO_INCREMENT,
    USER_CODE            VARCHAR(128) NOT NULL,
    USER_NAME            VARCHAR(128) NOT NULL,
    NICK_NAME            VARCHAR(128),
@@ -56,4 +71,3 @@ CREATE TABLE T_USER
    UPD_TIME             DATETIME,
    PRIMARY KEY (USER_ID)
 );
-

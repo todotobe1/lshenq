@@ -11,7 +11,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.2.7.RELEASE</version>
 	</parent>
-	
+
 	<packaging>pom</packaging>
 	<modules>
 		<module>api-parent</module>
@@ -19,6 +19,7 @@
 		<module>service-parent</module>
 		<module>cantor</module>
 		<module>db-flyway</module>
+		<module>api-web</module>
 	</modules>
 
 	<build>
@@ -33,15 +34,18 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+		<lshenq.version>0.0.1-SNAPSHOT</lshenq.version>
+
 		<spring-hateoas.version>0.19.0.RELEASE</spring-hateoas.version>
+		<commons-lang.version>0.19.0.RELEASE</commons-lang.version>
 		<mysql-connector-java.version>5.1.36</mysql-connector-java.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
 		</dependency>
 	</dependencies>
 </project>
