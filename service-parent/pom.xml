@@ -13,6 +13,7 @@
 		<module>pay-service</module>
 		<module>user-service</module>
 		<module>push-service</module>
+		<module>booking-service</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -27,6 +28,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
 		</dependency>
 	</dependencies>
 </project>
