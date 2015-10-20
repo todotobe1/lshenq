@@ -3,6 +3,7 @@ package cn.lshenq.api.order.rest;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 import static org.springframework.hateoas.mvc.ControllerLinkBuilder.methodOn;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import cn.lshenq.order.repository.OrderRepository;
+
 @RestController
 public class OrderController {
 
+	@Autowired
+	OrderRepository orderRepository;
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/orders")
 	@ResponseBody
 	public HttpEntity<Order> getOrders(

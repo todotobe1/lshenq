@@ -15,10 +15,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cn.lshenq.order.OrderApplication;
-import cn.lshenq.order.domain.Order;
-import cn.lshenq.order.domain.OrderDataState;
-import cn.lshenq.order.domain.OrderPayState;
-import cn.lshenq.order.domain.OrderState;
+import cn.lshenq.order.entity.OrderEntity;
+import cn.lshenq.order.entity.OrderDataState;
+import cn.lshenq.order.entity.OrderPayState;
+import cn.lshenq.order.entity.OrderState;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = OrderApplication.class)
@@ -29,7 +29,7 @@ public class OrderRepositoryTests {
 
 	@Test
 	public void saveOrders() {
-		Order order = new Order();
+		OrderEntity order = new OrderEntity();
 		order.setBuyId(111111L);
 		order.setBookingId(11111L);
 		order.setCrtTime(new Date());
@@ -45,7 +45,7 @@ public class OrderRepositoryTests {
 	@Test
 	public void findsFirstPageOfOrders() {
 
-		Page<Order> orders = this.repository.findAll(new PageRequest(0, 10));
+		Page<OrderEntity> orders = this.repository.findAll(new PageRequest(0, 10));
 		assertThat(orders.getTotalElements(), is(greaterThan(1L)));
 	}
 }

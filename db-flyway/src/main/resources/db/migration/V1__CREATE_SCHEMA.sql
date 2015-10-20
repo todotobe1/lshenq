@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS T_BOOKING;
 
 DROP TABLE IF EXISTS T_DRIVER;
 
+DROP TABLE IF EXISTS T_DRIVER_GROUP;
+
 DROP TABLE IF EXISTS T_ORDER;
 
 DROP TABLE IF EXISTS T_USER;
@@ -28,6 +30,7 @@ CREATE TABLE T_BOOKING
 CREATE TABLE T_DRIVER
 (
    DRIVER_ID            INT NOT NULL AUTO_INCREMENT,
+   DRIVER_GROUP_ID      INT,
    DRIVER_CODE          VARCHAR(128) NOT NULL,
    DRIVER_NAME          VARCHAR(128),
    DRIVING_NO           VARCHAR(64) NOT NULL,
@@ -36,6 +39,19 @@ CREATE TABLE T_DRIVER
    UPD_TIME             DATETIME,
    PRIMARY KEY (DRIVER_ID)
 );
+
+/*==============================================================*/
+/* Table: T_DRIVER_GROUP                                        */
+/*==============================================================*/
+CREATE TABLE T_DRIVER_GROUP
+(
+   DRIVER_GROUP_ID      INT NOT NULL AUTO_INCREMENT,
+   DRIVER_GROUP_NAME    VARCHAR(64),
+   CRT_TIME             DATETIME,
+   UPD_TIME             DATETIME,
+   PRIMARY KEY (DRIVER_GROUP_ID)
+);
+
 
 /*==============================================================*/
 /* Table: T_ORDER                                               */

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-package cn.lshenq.order.domain;
+package cn.lshenq.order.entity;
 
-public enum OrderPayState {
-	UNPAY, PAYED
+public enum OrderDataState {
+	VALID, INVALIDITY
 }

@@ -1,5 +1,5 @@
 
-package cn.lshenq.order.domain;
+package cn.lshenq.order.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +18,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 @Entity
 @Table(name = "t_order")
-public class Order implements Serializable {
+public class OrderEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

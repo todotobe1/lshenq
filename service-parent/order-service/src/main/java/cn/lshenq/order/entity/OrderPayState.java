@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-package cn.lshenq.order.domain;
+package cn.lshenq.order.entity;
 
-public enum OrderState {
-	UNDO, CANCEL, HELD, DONE
+public enum OrderPayState {
+	UNPAY, PAYED
 }

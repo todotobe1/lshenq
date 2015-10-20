@@ -1,14 +1,9 @@
 
 package cn.lshenq.order.repository;
 
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.repository.Repository;
+import cn.lshenq.base.repository.BaseRepository;
+import cn.lshenq.order.entity.OrderEntity;
 
-import cn.lshenq.order.domain.Order;
-
-interface OrderRepository extends Repository<Order, Long> {
-	Order save(Order order);
+public interface OrderRepository extends BaseRepository<OrderEntity, Long> {
 	
-	Page<Order> findAll(Pageable pageable);
 }
