@@ -16,9 +16,11 @@ import javax.persistence.Table;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import cn.lshenq.base.domain.AbstractEntity;
+
 @Entity
 @Table(name = "t_order")
-public class OrderEntity implements Serializable {
+public class OrderEntity extends AbstractEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
