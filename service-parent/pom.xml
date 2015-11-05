@@ -9,6 +9,7 @@
 	<artifactId>service-parent</artifactId>
 	<packaging>pom</packaging>
 	<modules>
+		<module>abstract-service</module>
 		<module>order-service</module>
 		<module>pay-service</module>
 		<module>user-service</module>
