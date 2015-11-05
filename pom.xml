@@ -16,7 +16,6 @@
 	<modules>
 		<module>api-parent</module>
 		<module>cache-memory</module>
-		<module>abstract-service</module>
 		<module>service-parent</module>
 		<module>cantor</module>
 		<module>db-flyway</module>
@@ -25,10 +24,12 @@
 
 	<build>
 		<plugins>
+		<!-- 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+		 -->
 		</plugins>
 	</build>
 
