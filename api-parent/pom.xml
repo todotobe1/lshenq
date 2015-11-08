@@ -17,6 +17,16 @@
 	</modules>
 	<dependencies>
 		<dependency>
+			<groupId>cn.lshenq</groupId>
+			<artifactId>order-service</artifactId>
+			<version>${lshenq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.lshenq</groupId>
+			<artifactId>booking-service</artifactId>
+			<version>${lshenq.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>

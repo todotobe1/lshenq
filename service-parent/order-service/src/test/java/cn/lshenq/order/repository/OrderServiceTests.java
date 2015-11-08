@@ -32,10 +32,10 @@ public class OrderServiceTests {
 	public void saveOrders() {
 		OrderEntity order = new OrderEntity();
 		order.setBuyId(111111L);
-		order.setBookingId(11111L);
+		order.setBookingNo("0000001");
 		order.setCrtTime(new Date());
 		order.setDataState(OrderDataState.VALID);
-		order.setDriverId(null);
+		order.setDriverNo(null);
 		order.setOrderNo("O1111111");
 		order.setOrderPayState(OrderPayState.UNPAY);
 		order.setOrderState(OrderState.UNDO);

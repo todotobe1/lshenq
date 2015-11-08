@@ -15,8 +15,14 @@ public class OrderServiceImpl extends BaseServiceImpl implements OrderService {
 	@Autowired
 	OrderRepository orderRepository;
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public BaseRepository<AbstractEntity, Long> getRepository() {
-		return (BaseRepository)orderRepository;
+		return (BaseRepository) orderRepository;
+	}
+
+	@Override
+	public AbstractEntity findEntityByNo(String no) {
+		return orderRepository.findEntityByOrderNo(no);
 	}
 
 }

@@ -10,6 +10,7 @@ public interface BaseService {
 	public List<AbstractEntity> findAllEntity();
 	List<AbstractEntity> findAllEntity(Set<Long> ids);
 	public AbstractEntity findEntityById(Long id);
+	public AbstractEntity findEntityByNo(String no);
 	public void deleteEntity(AbstractEntity entity);
 	public void deleteEntity(Long id);
 }

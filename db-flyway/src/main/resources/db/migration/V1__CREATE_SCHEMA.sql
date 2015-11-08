@@ -14,14 +14,14 @@ DROP TABLE IF EXISTS T_USER;
 CREATE TABLE T_BOOKING
 (
    BOOKING_ID           INT NOT NULL AUTO_INCREMENT,
-   ORDER_ID             INT NOT NULL,
    BOOKING_NO           VARCHAR(128) NOT NULL,
-   TIME                 DATETIME NOT NULL,
+   APPOINT_TIME         DATETIME NOT NULL,
    STARTING_POINT       VARCHAR(128) NOT NULL,
    DESTINATION          VARCHAR(128) NOT NULL,
    CRT_TIME             DATETIME,
    UPD_TIME             DATETIME,
-   PRIMARY KEY (BOOKING_ID)
+   PRIMARY KEY (BOOKING_ID),
+   UNIQUE KEY BOOKING_NO_UNIQUE (BOOKING_NO)
 );
 
 /*==============================================================*/
@@ -46,6 +46,7 @@ CREATE TABLE T_DRIVER
 CREATE TABLE T_DRIVER_GROUP
 (
    DRIVER_GROUP_ID      INT NOT NULL AUTO_INCREMENT,
+   DRIVER_GROUP_NO      VARCHAR(128) NOT NULL,
    DRIVER_GROUP_NAME    VARCHAR(64),
    CRT_TIME             DATETIME,
    UPD_TIME             DATETIME,
@@ -60,16 +61,17 @@ CREATE TABLE T_ORDER
 (
    ORDER_ID             INT NOT NULL AUTO_INCREMENT,
    ORDER_NO             VARCHAR(128) NOT NULL,
-   DRIVER_ID            INT,
+   DRIVER_NO            VARCHAR(128),
    BUY_ID               INT NOT NULL,
-   BOOKING_ID           INT NOT NULL,
+   BOOKING_NO           VARCHAR(128) NOT NULL,
    AMOUNT               VARCHAR(12),
    ORDER_STATE          CHAR(1),
    PAY_STATE            CHAR(1),
    DATA_STATE           CHAR(1),
    CRT_TIME             DATETIME,
    UPD_TIME             DATETIME,
-   PRIMARY KEY (ORDER_ID)
+   PRIMARY KEY (ORDER_ID),
+   UNIQUE KEY ORDER_NO_UNIQUE (ORDER_NO)
 );
 
 /*==============================================================*/

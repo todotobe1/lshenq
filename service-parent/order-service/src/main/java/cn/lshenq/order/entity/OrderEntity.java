@@ -2,7 +2,6 @@
 package cn.lshenq.order.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,10 +31,10 @@ public class OrderEntity extends AbstractEntity implements Serializable {
 	private String orderNo;
 
 	@Column(nullable = false)
-	private Long bookingId;
+	private String bookingNo;
 
 	@Column(nullable = true)
-	private Long driverId;
+	private String driverNo;
 
 	@Column(nullable = false)
 	private Long buyId;
@@ -55,12 +54,6 @@ public class OrderEntity extends AbstractEntity implements Serializable {
 	@Enumerated(EnumType.ORDINAL)
 	private OrderDataState dataState;
 
-	@Column(nullable = false)
-	private Date crtTime;
-
-	@Column(nullable = false)
-	private Date updTime;
-
 	public Long getOrderId() {
 		return orderId;
 	}
@@ -77,20 +70,20 @@ public class OrderEntity extends AbstractEntity implements Serializable {
 		this.orderNo = orderNo;
 	}
 
-	public Long getBookingId() {
-		return bookingId;
+	public String getBookingNo() {
+		return bookingNo;
 	}
 
-	public void setBookingId(Long bookingId) {
-		this.bookingId = bookingId;
+	public void setBookingNo(String bookingNo) {
+		this.bookingNo = bookingNo;
 	}
 
-	public Long getDriverId() {
-		return driverId;
+	public String getDriverNo() {
+		return driverNo;
 	}
 
-	public void setDriverId(Long driverId) {
-		this.driverId = driverId;
+	public void setDriverNo(String driverNo) {
+		this.driverNo = driverNo;
 	}
 
 	public Long getBuyId() {
@@ -131,22 +124,6 @@ public class OrderEntity extends AbstractEntity implements Serializable {
 
 	public void setDataState(OrderDataState dataState) {
 		this.dataState = dataState;
-	}
-
-	public Date getCrtTime() {
-		return crtTime;
-	}
-
-	public void setCrtTime(Date crtTime) {
-		this.crtTime = crtTime;
-	}
-
-	public Date getUpdTime() {
-		return updTime;
-	}
-
-	public void setUpdTime(Date updTime) {
-		this.updTime = updTime;
 	}
 
 	@Override
