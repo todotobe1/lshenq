@@ -4,8 +4,6 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-import java.util.Date;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,15 +29,13 @@ public class OrderRepositoryTests {
 	@Test
 	public void saveOrders() {
 		OrderEntity order = new OrderEntity();
-		order.setBuyId(111111L);
+		order.setBuyId("111111");
 		order.setBookingNo("000001");
-		order.setCrtTime(new Date());
 		order.setDataState(OrderDataState.VALID);
 		order.setDriverNo(null);
 		order.setOrderNo("O1111111");
 		order.setOrderPayState(OrderPayState.UNPAY);
 		order.setOrderState(OrderState.UNDO);
-		order.setUpdTime(new Date());
 		repository.save(order);
 	}
 	

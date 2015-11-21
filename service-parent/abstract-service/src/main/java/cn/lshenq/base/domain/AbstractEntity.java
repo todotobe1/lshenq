@@ -5,14 +5,17 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 
+import org.springframework.data.annotation.LastModifiedDate;
+
 @MappedSuperclass
 public abstract class AbstractEntity {
 
 	@Column(nullable = false)
-	protected Date crtTime;
+	protected Date crtTime = new Date();
 
+	@LastModifiedDate
 	@Column(nullable = false)
-	protected Date updTime;
+	protected Date updTime = new Date();
 
 	public Date getCrtTime() {
 		return crtTime;

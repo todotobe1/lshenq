@@ -62,7 +62,7 @@ CREATE TABLE T_ORDER
    ORDER_ID             INT NOT NULL AUTO_INCREMENT,
    ORDER_NO             VARCHAR(128) NOT NULL,
    DRIVER_NO            VARCHAR(128),
-   BUY_ID               INT NOT NULL,
+   BUY_ID               VARCHAR(128) NOT NULL,
    BOOKING_NO           VARCHAR(128) NOT NULL,
    AMOUNT               VARCHAR(12),
    ORDER_STATE          CHAR(1),

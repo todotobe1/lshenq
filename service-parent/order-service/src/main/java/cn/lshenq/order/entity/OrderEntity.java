@@ -37,20 +37,20 @@ public class OrderEntity extends AbstractEntity implements Serializable {
 	private String driverNo;
 
 	@Column(nullable = false)
-	private Long buyId;
+	private String buyId;
 
 	@Column(nullable = true)
 	private String amount;
 
-	@Column(nullable = false)
+	@Column(name = "order_state", nullable = false)
 	@Enumerated(EnumType.ORDINAL)
 	private OrderState orderState;
 
-	@Column(nullable = false)
+	@Column(name="pay_state", nullable = false)
 	@Enumerated(EnumType.ORDINAL)
 	private OrderPayState orderPayState;
 
-	@Column(name = "order_data_state", nullable = false)
+	@Column(name = "data_state", nullable = false)
 	@Enumerated(EnumType.ORDINAL)
 	private OrderDataState dataState;
 
@@ -86,11 +86,11 @@ public class OrderEntity extends AbstractEntity implements Serializable {
 		this.driverNo = driverNo;
 	}
 
-	public Long getBuyId() {
+	public String getBuyId() {
 		return buyId;
 	}
 
-	public void setBuyId(Long buyId) {
+	public void setBuyId(String buyId) {
 		this.buyId = buyId;
 	}
 

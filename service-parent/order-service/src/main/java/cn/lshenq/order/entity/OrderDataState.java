@@ -17,5 +17,5 @@
 package cn.lshenq.order.entity;
 
 public enum OrderDataState {
-	VALID, INVALIDITY
+	VALID, INVALIDITY;
 }
