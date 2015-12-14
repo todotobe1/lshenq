@@ -8,4 +8,11 @@
 	</parent>
 	<artifactId>user-service</artifactId>
 	<packaging>jar</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>cn.lshenq</groupId>
+			<artifactId>abstract-service</artifactId>
+			<version>${lshenq.version}</version>
+		</dependency>
+	</dependencies>
 </project>

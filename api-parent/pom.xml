@@ -17,6 +17,11 @@
 	</modules>
 	<dependencies>
 		<dependency>
+			<groupId>cn.lshenq</groupId>
+			<artifactId>api-security</artifactId>
+			<version>${lshenq.version}</version>
+		</dependency>
+		<dependency>
 			<groupId>com.mangofactory</groupId>
 			<artifactId>swagger-springmvc</artifactId>
 			<version>${swagger-springmvc.version}</version>

@@ -7,11 +7,8 @@ import static org.junit.Assert.assertThat;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import cn.lshenq.order.OrderApplication;
 import cn.lshenq.order.entity.OrderDataState;
@@ -20,7 +17,7 @@ import cn.lshenq.order.entity.OrderPayState;
 import cn.lshenq.order.entity.OrderState;
 import cn.lshenq.order.service.OrderService;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = OrderApplication.class)
 public class OrderServiceTests {
 
@@ -45,7 +42,7 @@ public class OrderServiceTests {
 		assertThat(new Long(orderService.findAllEntity().size()), is(greaterThan(1L)));
 	}
 	
-	@Test
+//	@Test
 	public void findAllOrdersByIds() {
 		Set<Long> ids = new HashSet<Long>();
 		ids.add(1L);

@@ -1,11 +1,10 @@
 package cn.lshenq.api.order;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.ExposesResourceFor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,6 +29,11 @@ public class OrderController {
 	@Autowired
 	OrderService orderService;
 
+	@RequestMapping("/frcs")
+    public CsrfToken csrf(CsrfToken token) {
+        return token;
+    }
+	
 	@ApiOperation(value = "订单查询", notes = "根据订单号查询订单", position = 2)
 	@RequestMapping(method = RequestMethod.GET, value = "/{orderNo}")
 	@ResponseBody
